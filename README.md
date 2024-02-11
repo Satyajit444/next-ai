@@ -1,25 +1,41 @@
-# Build a SaaS AI Platform with Next.js 13, React, Tailwind, Prisma, Stripe
+# Build a UI library with Next.js 13, React, Tailwind, Prisma, Stripe
 
-Features:
+Saka-ui is a UI library inspired by Material Design, offering a collection of reusable components for building modern and visually appealing user interfaces.
 
-- Tailwind design
-- Tailwind animations and effects
-- Full responsiveness
-- Clerk Authentication (Email, Google, 9+ Social Logins)
-- Client form validation and handling using react-hook-form
-- Server error handling using react-toast
-- Image Generation Tool (Open AI)
-- Video Generation Tool (Replicate AI)
-- Conversation Generation Tool (Open AI)
-- Music Generation Tool (Replicate AI)
-- Page loading state
-- Stripe monthly subscription
-- Free tier with API limiting
-- How to write POST, DELETE, and GET routes in route handlers (app/api)
-- How to fetch data in server react components by directly accessing database (WITHOUT API! like Magic!)
-- How to handle relations between Server and Child components!
-- How to reuse layouts
-- Folder structure in Next 13 App Router
+## Features
+
+- **Material Design Inspired:**
+  - Follows the principles of Material Design for a familiar and polished UI.
+
+- **Component Library:**
+  - A comprehensive collection of reusable and customizable UI components.
+
+- **Responsive Design:**
+  - Ensures seamless experiences across various screen sizes and devices.
+
+- **Easy Integration:**
+  - Simple integration into existing projects for a smooth adoption process.
+
+- **Custom Theming:**
+  - Allows easy customization to match branding and design preferences.
+
+- **Modular Architecture:**
+  - Designed with modularity, reducing overall bundle size.
+
+- **Accessibility Support:**
+  - Prioritizes accessibility for users with disabilities.
+
+- **Cross-Browser Compatibility:**
+  - Tested and optimized for compatibility with major web browsers.
+
+- **Documentation:**
+  - Comprehensive documentation with examples and guidelines.
+
+- **Active Development:**
+  - Regular updates and improvements to stay current with web development trends.
+
+- **Community Support:**
+  - Foster a community for users to seek help, share experiences, and contribute.
 
 ### Prerequisites
 
@@ -28,7 +44,7 @@ Features:
 ### Cloning the repository
 
 ```shell
-git clone https://github.com/AntonioErdeljac/next13-ai-saas.git
+git clone https://github.com/#############################
 ```
 
 ### Install packages
@@ -49,13 +65,10 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
 
-OPENAI_API_KEY=
-REPLICATE_API_TOKEN=
-
 DATABASE_URL=
 
 STRIPE_API_KEY=
-STRIPE_WEBHOOK_SECRET=
+
 
 NEXT_PUBLIC_APP_URL="http://localhost:3000"
 ```

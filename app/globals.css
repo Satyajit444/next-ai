@@ -82,3 +82,7 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+.shadows {
+  background-image: linear-gradient(90deg, #1F92CC 4%, #2769CC, #CC1231);
+}
