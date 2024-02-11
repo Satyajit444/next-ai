@@ -1,17 +1,9 @@
 "use client";
 
-import { ArrowRight, Link } from "lucide-react";
-import { useRouter } from "next/navigation";
-
-import { Card } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-
-import { tools } from "@/constants";
 import TypewriterComponent from "typewriter-effect";
 import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
-  const router = useRouter();
 
   return (
     <div>
@@ -23,23 +15,6 @@ export default function HomePage() {
           Build webpages in less time...
         </p>
       </div>
-      {/* <div className="px-4 md:px-20 lg:px-32 space-y-4">
-        {tools.map((tool) => (
-          <Card
-            onClick={() => router.push(tool.href)}
-            key={tool.href}
-            className="p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
-          >
-            <div className="flex items-center gap-x-4">
-              <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
-                <tool.icon className={cn("w-8 h-8", tool.color)} />
-              </div>
-              <div className="font-semibold">{tool.label}</div>
-            </div>
-            <ArrowRight className="w-5 h-5" />
-          </Card>
-        ))}
-      </div> */}
 
       <div className="text-white font-bold py-36 text-center space-y-5">
         <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl space-y-5 font-extrabold">
