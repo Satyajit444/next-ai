@@ -30,7 +30,7 @@ const routes = [
   {
     label: "Docs",
     icon: BookOpen,
-    href: "/dashboard",
+    href: "/",
     color: "text-sky-500",
     subDomains: [
       {

@@ -10,7 +10,7 @@ const font = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SAKA UI",
-  description: "AI Platform",
+  description: "UI Library",
 };
 
 export default async function RootLayout({
