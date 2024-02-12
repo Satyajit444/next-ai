@@ -68,37 +68,37 @@ const routes = [
   {
     label: "Components",
     icon: Component,
-    href: "/conversation",
+    href: "/components",
     color: "text-violet-500",
   },
   {
     label: "Theme Generator",
     icon: Palette,
     color: "text-pink-700",
-    href: "/image",
+    href: "/theme",
   },
   {
     label: "Store",
     icon: Store,
     color: "text-orange-700",
-    href: "/video",
+    href: "/store",
   },
   {
     label: "Blog",
     icon: Rss,
     color: "text-emerald-500",
-    href: "/music",
+    href: "/blog",
   },
   {
     label: "Resources",
     icon: Boxes,
     color: "text-green-700",
-    href: "/code",
+    href: "/resources",
   },
   {
     label: "Playground",
     icon: Play,
-    href: "/settings",
+    href: "/playground",
   },
 ];
 
@@ -147,7 +147,7 @@ export const Sidebar: React.FC = () => {
                 className={cn(
                   "text-sm group flex px-3 py-2 w-full justify-start cursor-pointer  hover:bg-[#d8d7d7] rounded-lg transition",
                   pathname === route.href
-                    ? "text-white bg-[#555] hover:bg-[#555]"
+                    ? "text-black bg-[#d8d7d7]"
                     : "text-black"
                 )}
               >
@@ -177,9 +177,9 @@ export const Sidebar: React.FC = () => {
                       key={docList.href}
                       href={docList.href}
                       className={cn(
-                        "text-xs group flex p-3 w-full justify-start font-medium cursor-pointer hover:font-semibold rounded-lg transition",
+                        "text-xs group flex px-3 py-1.5 w-full justify-start hover:bg-[#d8d7d7] font-medium cursor-pointer hover:font-semibold rounded-lg transition",
                         pathname === docList.href
-                          ? "text-white bg-[#333] hover:bg-[#333]"
+                          ? "text-white bg-[#d8d7d7]"
                           : "text-black"
                       )}
                     >
