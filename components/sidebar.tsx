@@ -11,11 +11,18 @@ import {
   Rss,
   Boxes,
   Play,
+  CloudCog,
+  Paintbrush2,
+  Hand,
+  ChevronDown,
+  ChevronUp,
+  BrainCog,
 } from "lucide-react";
 
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const poppins = Montserrat({ weight: "600", subsets: ["latin"] });
 
@@ -25,28 +32,28 @@ const routes = [
     icon: BookOpen,
     href: "/dashboard",
     color: "text-sky-500",
-    docLists: [
+    subDomains: [
       {
         label: "Install",
-        icon: BookOpen,
+        icon: CloudCog,
         href: "/dashboard/nested-route-1",
         color: "text-black-500",
       },
       {
         label: "Use",
-        icon: BookOpen,
+        icon: Hand,
         href: "/dashboard/nested-route-2",
         color: "text-blue-300",
       },
       {
         label: "Customize components",
-        icon: BookOpen,
+        icon: BrainCog,
         href: "/dashboard/nested-route-3",
         color: "text-gray-700",
       },
       {
         label: "Colors",
-        icon: BookOpen,
+        icon: Paintbrush2,
         href: "/dashboard/nested-route-4",
         color: "text-red-500",
       },
@@ -95,11 +102,27 @@ const routes = [
   },
 ];
 
-export const Sidebar = () => {
+interface Route {
+  label: string;
+  href: string;
+  subDomains?: DocList[];
+}
+
+interface DocList {
+  label: string;
+  href: string;
+}
+
+export const Sidebar: React.FC = () => {
   const pathname = usePathname();
+  const [openRoute, setOpenRoute] = useState<string | null>(null);
+
+  const handleRouteClick = (href: string) => {
+    setOpenRoute((prevRoute) => (prevRoute === href ? null : href));
+  };
 
   return (
-    <div className="space-y-4 py-4 flex flex-col h-full bg-[#fff] text-white">
+    <div className="space-y-4 py-4 flex flex-col h-full text-white bg-glass">
       <div className="px-3 py-2 flex-1">
         <Link href="/dashboard" className="flex items-center pl-3 mb-14">
           <div className="relative h-8 w-8 mr-4">
@@ -112,15 +135,19 @@ export const Sidebar = () => {
           </h1>
         </Link>
         <div className="space-y-1">
-          {routes.map((route) => (
-            <div key={route.label} className="space-y-1">
+          {routes.map((route, index) => (
+            <div
+              key={route.label}
+              className="space-y-1"
+              onClick={() => handleRouteClick(route.href)}
+            >
               {/* Main Route */}
               <Link
                 href={route.href}
                 className={cn(
-                  "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:font-bold hover:bg-[#d8d7d7] rounded-lg transition",
+                  "text-sm group flex px-3 py-2 w-full justify-start cursor-pointer  hover:bg-[#d8d7d7] rounded-lg transition",
                   pathname === route.href
-                    ? "text-white bg-[#333] hover:bg-[#333]"
+                    ? "text-white bg-[#555] hover:bg-[#555]"
                     : "text-black"
                 )}
               >
@@ -128,12 +155,24 @@ export const Sidebar = () => {
                   <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
                   {route.label}
                 </div>
+                {route.subDomains && route.subDomains.length > 0 ? (
+                  <>
+                    {openRoute === route.href ? <ChevronUp /> : <ChevronDown />}
+                  </>
+                ) : null}
               </Link>
 
-              {/* Nested Routes (docLists) */}
-              {route.docLists && (
+              {index === 2 ? (
+                <div className="h-10 flex items-center">
+                  <hr className="w-full" />
+                </div>
+              ) : null}
+
+              {/* Nested Routes (subDomains) */}
+
+              {openRoute === route.href && route.subDomains && (
                 <div className="pl-6 space-y-1">
-                  {route.docLists.map((docList) => (
+                  {route.subDomains.map((docList) => (
                     <Link
                       key={docList.href}
                       href={docList.href}
