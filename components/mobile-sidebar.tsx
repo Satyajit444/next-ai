@@ -22,7 +22,7 @@ export const MobileSidebar = () => {
     <Sheet>
       <SheetTrigger>
         {/* <Button variant="ghost" size="icon" className="md:hidden"> */}
-        <Button variant="ghost" size="icon" >
+        <Button variant="ghost" className="text-white hover:bg-transparent hover:text-white" size="icon" >
           <Menu />
         </Button>
       </SheetTrigger>
