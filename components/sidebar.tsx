@@ -36,7 +36,7 @@ const routes = [
       {
         label: "Install",
         icon: CloudCog,
-        href: "/dashboard/nested-route-1",
+        href: "/dashboard/install",
         color: "text-black-500",
       },
       {
@@ -98,7 +98,8 @@ const routes = [
   {
     label: "Playground",
     icon: Play,
-    href: "/playground",
+    href: "https://codesandbox.io/p/sandbox/react-tailwind-playground-w6viv?file=%2Fsrc%2Findex.tsx%3A8%2C1",
+    target:"_blank",
   },
 ];
 
@@ -143,6 +144,7 @@ export const Sidebar: React.FC = () => {
             >
               {/* Main Route */}
               <Link
+                target={route.target}
                 href={route.href}
                 className={cn(
                   "text-sm group flex px-3 py-2 w-full justify-start cursor-pointer  hover:bg-[#d8d7d7] rounded-lg transition",

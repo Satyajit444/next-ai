@@ -33,7 +33,7 @@ export const LandingHero = () => {
             variant="premium"
             className="md:text-lg p-4 md:p-6 rounded-full font-semibold"
           >
-            Let's have a try.
+            Let's have a try....
           </Button>
         </Link>
       </div>
